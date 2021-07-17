@@ -11,7 +11,6 @@ module.exports = function(app){
             // passa o resultado da consulta ao banco de dados como uma variavel no arquivo ejs
             // essa variavel vai ser um array com todos os conteúdos
             // passa como argumento um JSON {}
-            console.log(result.rows)
             res.render('noticias/noticia', {noticia : result.rows})
         })
     })
