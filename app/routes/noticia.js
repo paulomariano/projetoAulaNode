@@ -6,12 +6,13 @@ module.exports = function(app){
 
         var connection = dbConnection()
     
-        connection.query('select * from noticias where id_noticias = '+ id,function(error, result){
+        connection.query(`select * from noticias where id_noticias = '${id}'`,function(error, result){
             // res.send(result)
             // passa o resultado da consulta ao banco de dados como uma variavel no arquivo ejs
             // essa variavel vai ser um array com todos os conteúdos
             // passa como argumento um JSON {}
-            res.render('noticias/noticia', {noticia : result})
+            console.log(result.rows)
+            res.render('noticias/noticia', {noticia : result.rows})
         })
     })
 }
