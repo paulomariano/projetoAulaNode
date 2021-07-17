@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Notícias</title>
+		</head>
+	<body>
+		<%- include('../common/header.ejs') %>
+		<h1>Notícias</h1>
+
+		<table border="1" width="650">
+			<tr align="center">
+				<th>ID</th>
+				<th>Titulo</th>
+			</tr>
+			<!-- insere códigos html de forma dinamica na página com <% %>
+			e para imprimir conteúdo usa <%= %> -->
+			<% for(var i = 0; i < noticias.length; i++){ %> 
+			<tr align="center">
+				<td><a href="/noticia?id=<%= noticias[i].id_noticias %>"><%= noticias[i].id_noticias %></a></td>
+				<td><%= noticias[i].titulo %></td>		
+			</tr>				
+			<% } %>
+		</table>
+	</body>
+</html>
